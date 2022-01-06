@@ -1,0 +1,165 @@
+.react-calendar {
+  margin: px2rem(35) auto;
+  border: 0 !important;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  color: $black;
+  font-size: 24px;
+
+  .react-calendar__tile {
+    font-weight: 600;
+    color: $black;
+    font-size: 24px;
+  }
+
+  .react-calendar__tile--active {
+    background: $secondary !important;
+    color: $white !important;
+    border-radius: 4px;
+  }
+
+  .react-calendar__month-view__days__day--weekend {
+    color: red;
+  }
+
+  .react-calendar__tile--now {
+    color: $black;
+    background: $secondary;
+    border-radius: 4px;
+  }
+
+  .react-calendar__tile--active:enabled:hover, .react-calendar__tile--active:enabled:focus {
+    background: $secondary;
+  }
+
+  .react-calendar__tile--now:enabled:hover, .react-calendar__tile--now:enabled:focus {
+    background: $primary;
+  }
+
+  span.react-calendar__navigation__label__labelText.react-calendar__navigation__label__labelText--from {
+    color: $secondary;
+    font-weight: 600;
+    font-size: 24px;
+    text-transform: uppercase;
+  }
+  abbr[title], abbr[data-bs-original-title] {
+    text-decoration: none !important;
+  }
+  button.react-calendar__tile {
+    border: 1px solid #fff;
+    border-radius: 4px;
+  }
+  button.react-calendar__navigation__arrow {
+    background: #FFFFFF;
+    border: 1px solid #F2F2F2;
+    border-radius: 4px;
+  }
+  .react-calendar__navigation button:enabled:focus {
+    background-color: unset;
+  }
+  .react-calendar__tile:disabled {
+    background-color: $white;
+    color: $black;
+  }
+  .react-calendar__tile:disabled.react-calendar__tile--now {
+    background: $secondary;
+  }
+
+  .react-calendar__navigation__prev2-button,
+  .react-calendar__navigation__next2-button {
+    display: none;
+  }
+  .react-calendar__navigation__label {
+    pointer-events: none;
+  }
+  .react-calendar__month-view__weekdays {
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 8px;
+    display: flex;
+    color: #979797;
+    margin-bottom: px2rem(12);
+  }
+}
+
+.scroll-select-container{
+  position: relative;
+  width: 100%;
+}
+
+.scroll-selector-area{
+  position: absolute;
+  border-top: 1px solid rgb(197, 197, 197);
+  border-bottom: 1px solid rgb(197, 197, 197);
+  width: 99%;
+  z-index: -1;
+}
+
+.scroll-select-list{
+  display:flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  color: rgb(187, 187, 187);
+  position: relative;
+  perspective: 1000px;
+}
+
+.scroll-select-list::-webkit-scrollbar {
+  width: 0 !important
+}
+
+.scroll-item{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  align-items: center;
+}
+
+.wheel-item{
+  background: rgb(249, 249, 249);
+  border: 1px solid rgb(177, 177, 177);
+}
+
+.scroll-item:hover{
+  cursor: pointer;
+}
+
+.selected-time{
+  color: rgb(29, 29, 29);
+  font-weight: bold;
+  transition: all 0.2s ;
+  color: rgb(50, 50, 50);
+}
+
+.scroll-item-container {
+  &.larging {
+    padding: 1rem;
+    border-top: 1px solid $black;
+    border-bottom: 1px solid $black;
+
+    span {
+      font-size: px2rem(32);
+      color: $black;
+      font-weight: 700;
+    }
+  }
+}
+
+.timepicker {
+  h1 {
+    color: $secondary;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .btn-close-modal {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+  }
+}
