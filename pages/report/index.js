@@ -28,6 +28,7 @@ const ReportPage = () => {
   const [dateFinish, setDateFinish] = useState(new Date());
   const [activeDateOpened, setActiveDateOpened] = useState('start');
   const [modalDate, setModalDate] = useState(false);
+  const [showBill, setShowBill] = useState(false);
 
   const options = [
     { value: 'chocolate', label: 'Chocolate' },
@@ -72,6 +73,7 @@ const ReportPage = () => {
     };
 
     console.log(params);
+    setShowBill(true);
   };
 
   return (
@@ -132,41 +134,43 @@ const ReportPage = () => {
 
                 <hr />
 
-                <div className="bill-wrapper">
-                  <Card>
-                    <CardBody>
-                      <div className="d-flex align-items-center flex-column">
-                        <img src="/assets/images/logo.jpeg" alt="logo" width={100} />
-                        <div className="d-flex align-items-start flex-column w-100">
-                          <span>{`<Nama Supplier>`}</span>
-                          <span>{`<Tanggal Masuk>`}</span>
-                          <span>{`<Tanggal Keluar>`}</span>
+                {showBill && (
+                  <div className="bill-wrapper">
+                    <Card>
+                      <CardBody>
+                        <div className="d-flex align-items-center flex-column">
+                          <img src="/assets/images/logo.jpeg" alt="logo" width={100} />
+                          <div className="d-flex align-items-start flex-column w-100">
+                            <span>{`<Nama Supplier>`}</span>
+                            <span>{`<Tanggal Masuk>`}</span>
+                            <span>{`<Tanggal Keluar>`}</span>
+                          </div>
                         </div>
-                      </div>
 
-                      <div className="mt-5">
-                        <DetailField2
-                          classValue="d-flex justify-content-end"
-                          title="kue pancong"
-                          subtitle={`2x ${Helper.moneyFormat(1500)}`}
-                          value={Helper.moneyFormat(3000)}
-                        />
-                        <hr />
-                        <DetailField2
-                          classValue="d-flex justify-content-end"
-                          title="Total"
-                          value={Helper.moneyFormat(3000)}
-                        />
-                      </div>
+                        <div className="mt-5">
+                          <DetailField2
+                            classValue="d-flex justify-content-end"
+                            title="kue pancong"
+                            subtitle={`2x ${Helper.moneyFormat(1500)}`}
+                            value={Helper.moneyFormat(3000)}
+                          />
+                          <hr />
+                          <DetailField2
+                            classValue="d-flex justify-content-end"
+                            title="Total"
+                            value={Helper.moneyFormat(3000)}
+                          />
+                        </div>
 
-                      <div className="d-flex flex-column mt-5">
-                        <span>Terima kasih telah menjadi supplier kami.</span>
-                        <span>---------</span>
-                        <span>Kue Basah Bu Eva</span>
-                      </div>
-                    </CardBody>
-                  </Card>
-                </div>
+                        <div className="d-flex flex-column mt-5">
+                          <span>Terima kasih telah menjadi supplier kami.</span>
+                          <span>---------</span>
+                          <span>Kue Basah Bu Eva</span>
+                        </div>
+                      </CardBody>
+                    </Card>
+                  </div>
+                )}
               </CardBody>
             </Card>
           </div>
